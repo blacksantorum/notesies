@@ -15,6 +15,8 @@
 		EC7A7E721A3EBA3A0036198A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC7A7E711A3EBA3A0036198A /* Images.xcassets */; };
 		EC7A7E751A3EBA3A0036198A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7A7E731A3EBA3A0036198A /* LaunchScreen.xib */; };
 		EC7A7E811A3EBA3A0036198A /* LifeboatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A7E801A3EBA3A0036198A /* LifeboatTests.swift */; };
+		EC7A7E8B1A3EBAB90036198A /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A7E8A1A3EBAB90036198A /* Entry.swift */; };
+		EC7A7E8D1A3EBFE70036198A /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A7E8C1A3EBFE70036198A /* AddEntryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		EC7A7E7A1A3EBA3A0036198A /* LifeboatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LifeboatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC7A7E7F1A3EBA3A0036198A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC7A7E801A3EBA3A0036198A /* LifeboatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeboatTests.swift; sourceTree = "<group>"; };
+		EC7A7E8A1A3EBAB90036198A /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		EC7A7E8C1A3EBFE70036198A /* AddEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,11 +87,13 @@
 			children = (
 				EC7A7E651A3EBA3A0036198A /* AppDelegate.swift */,
 				EC7A7E6A1A3EBA3A0036198A /* MasterViewController.swift */,
+				EC7A7E8C1A3EBFE70036198A /* AddEntryViewController.swift */,
 				EC7A7E6C1A3EBA3A0036198A /* DetailViewController.swift */,
 				EC7A7E6E1A3EBA3A0036198A /* Main.storyboard */,
 				EC7A7E711A3EBA3A0036198A /* Images.xcassets */,
 				EC7A7E731A3EBA3A0036198A /* LaunchScreen.xib */,
 				EC7A7E671A3EBA3A0036198A /* Lifeboat.xcdatamodeld */,
+				EC7A7E8A1A3EBAB90036198A /* Entry.swift */,
 				EC7A7E631A3EBA3A0036198A /* Supporting Files */,
 			);
 			path = Lifeboat;
@@ -218,8 +224,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC7A7E8B1A3EBAB90036198A /* Entry.swift in Sources */,
 				EC7A7E661A3EBA3A0036198A /* AppDelegate.swift in Sources */,
 				EC7A7E691A3EBA3A0036198A /* Lifeboat.xcdatamodeld in Sources */,
+				EC7A7E8D1A3EBFE70036198A /* AddEntryViewController.swift in Sources */,
 				EC7A7E6B1A3EBA3A0036198A /* MasterViewController.swift in Sources */,
 				EC7A7E6D1A3EBA3A0036198A /* DetailViewController.swift in Sources */,
 			);

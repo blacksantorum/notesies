@@ -13,7 +13,14 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     var managedObjectContext: NSManagedObjectContext? = nil
 
-
+    @IBAction func unwindAfterCancelling(segue: UIStoryboardSegue) {
+        
+    }
+    
+    @IBAction func unwindAfterAdding(segue: UIStoryboardSegue) {
+        
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -21,10 +28,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        
 
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-        self.navigationItem.rightBarButtonItem = addButton
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,33 +37,17 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         // Dispose of any resources that can be recreated.
     }
 
-    func insertNewObject(sender: AnyObject) {
-        let context = self.fetchedResultsController.managedObjectContext
-        let entity = self.fetchedResultsController.fetchRequest.entity!
-        let newManagedObject = NSEntityDescription.insertNewObjectForEntityForName(entity.name!, inManagedObjectContext: context) as NSManagedObject
-             
-        // If appropriate, configure the new managed object.
-        // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-        newManagedObject.setValue(NSDate(), forKey: "timeStamp")
-             
-        // Save the context.
-        var error: NSError? = nil
-        if !context.save(&error) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            //println("Unresolved error \(error), \(error.userInfo)")
-            abort()
-        }
-    }
-
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
-            let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
+            let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as Entry
             (segue.destinationViewController as DetailViewController).detailItem = object
             }
+        }
+        else if segue.identifier == "add" {
+            (segue.destinationViewController as AddEntryViewController).fetchedResultsController = self.fetchedResultsController
         }
     }
 
@@ -81,7 +70,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        return false
     }
 
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -101,7 +90,10 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
         let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
-        cell.textLabel.text = object.valueForKey("timeStamp")!.description
+        cell.textLabel.text = object.valueForKey("title")!.description
+        var formatter = NSDateFormatter()
+        formatter.dateFormat = "M/d"
+        cell.detailTextLabel!.text = formatter.stringFromDate(object.valueForKey("timeStamp")! as NSDate)
     }
 
     // MARK: - Fetched results controller
@@ -113,7 +105,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         
         let fetchRequest = NSFetchRequest()
         // Edit the entity name as appropriate.
-        let entity = NSEntityDescription.entityForName("Event", inManagedObjectContext: self.managedObjectContext!)
+        let entity = NSEntityDescription.entityForName("Entry", inManagedObjectContext: self.managedObjectContext!)
         fetchRequest.entity = entity
         
         // Set the batch size to a suitable number.
