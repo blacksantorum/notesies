@@ -51,7 +51,7 @@ class AddEntryViewController: UIViewController, UITextFieldDelegate, UITextViewD
     func insertNewObject(sender: AnyObject) {
         let context = self.fetchedResultsController!.managedObjectContext
         let entity = self.fetchedResultsController!.fetchRequest.entity!
-        let newManagedObject = NSEntityDescription.insertNewObjectForEntityForName(entity.name!, inManagedObjectContext: context) as Entry
+        let newManagedObject = NSEntityDescription.insertNewObjectForEntityForName(entity.name!, inManagedObjectContext: context) as NSManagedObject
         
         // If appropriate, configure the new managed object.
         // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
@@ -68,6 +68,11 @@ class AddEntryViewController: UIViewController, UITextFieldDelegate, UITextViewD
             abort()
         }
         self.performSegueWithIdentifier("added", sender: self)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.titleTextField.becomeFirstResponder()
     }
     
 

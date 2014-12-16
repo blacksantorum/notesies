@@ -12,7 +12,7 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var entryContentTextView: UITextView!
 
-    var detailItem: Entry? {
+    var detailItem: AnyObject? {
         didSet {
             self.configureView()
         }
@@ -23,7 +23,26 @@ class DetailViewController: UIViewController {
         if let detail: AnyObject = self.detailItem {
             if let textView = self.entryContentTextView {
                 textView.text = detail.valueForKey("content")!.description
+                
+                var formatter = NSDateFormatter()
+                formatter.dateFormat = "M/d"
+                
+                let dateString = formatter.stringFromDate(detail.valueForKey("timeStamp")! as NSDate)
+                
+                let titleString = detail.valueForKey("title") as String
+                
+                self.title = dateString + " - " + titleString
             }
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let delegate = UIApplication.sharedApplication().delegate as AppDelegate
+        
+        if delegate.needsAuth {
+            self.performSegueWithIdentifier("prompt", sender: self)
         }
     }
 

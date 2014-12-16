@@ -10,19 +10,45 @@ import UIKit
 import CoreData
 
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+    
 
     var managedObjectContext: NSManagedObjectContext? = nil
 
     @IBAction func unwindAfterCancelling(segue: UIStoryboardSegue) {
-        
+        // self.needsUnlock = false
+    }
+    
+    @IBAction func unlock(segue: UIStoryboardSegue) {
+        // self.needsUnlock = false
+        let delegate = UIApplication.sharedApplication().delegate as AppDelegate
+        delegate.needsAuth = false
     }
     
     @IBAction func unwindAfterAdding(segue: UIStoryboardSegue) {
-        
+        // self.needsUnlock = false
+    }
+    
+    @IBAction func unwindAfterChooseKey(segue: UIStoryboardSegue) {
+        // self.needsUnlock = false
+        let delegate = UIApplication.sharedApplication().delegate as AppDelegate
+        delegate.needsAuth = false
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let delegate = UIApplication.sharedApplication().delegate as AppDelegate
+        
+        if delegate.key == nil {
+            self.performSegueWithIdentifier("chooseKey", sender: self)
+        }
+        else if delegate.needsAuth {
+            self.performSegueWithIdentifier("prompt", sender: self)
+        }
     }
 
     override func viewDidLoad() {
@@ -42,12 +68,18 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
-            let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as Entry
+            let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
             (segue.destinationViewController as DetailViewController).detailItem = object
             }
         }
         else if segue.identifier == "add" {
             (segue.destinationViewController as AddEntryViewController).fetchedResultsController = self.fetchedResultsController
+            
+        }
+        else if segue.identifier == "resetKey" {
+            // let delegate = UIApplication.sharedApplication().delegate as AppDelegate
+            var destVc = (segue.destinationViewController as ChooseKeyViewController)
+            destVc.isResetting = true
         }
     }
 
@@ -70,7 +102,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return false
+        return true
     }
 
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {

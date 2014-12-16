@@ -17,6 +17,8 @@
 		EC7A7E811A3EBA3A0036198A /* LifeboatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A7E801A3EBA3A0036198A /* LifeboatTests.swift */; };
 		EC7A7E8B1A3EBAB90036198A /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A7E8A1A3EBAB90036198A /* Entry.swift */; };
 		EC7A7E8D1A3EBFE70036198A /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A7E8C1A3EBFE70036198A /* AddEntryViewController.swift */; };
+		ECEC749B1A3ECE5A003FEECC /* UnlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEC749A1A3ECE5A003FEECC /* UnlockViewController.swift */; };
+		ECEC749D1A4004B1003FEECC /* ChooseKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEC749C1A4004B1003FEECC /* ChooseKeyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		EC7A7E801A3EBA3A0036198A /* LifeboatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeboatTests.swift; sourceTree = "<group>"; };
 		EC7A7E8A1A3EBAB90036198A /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		EC7A7E8C1A3EBFE70036198A /* AddEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
+		ECEC749A1A3ECE5A003FEECC /* UnlockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlockViewController.swift; sourceTree = "<group>"; };
+		ECEC749C1A4004B1003FEECC /* ChooseKeyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseKeyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 				EC7A7E8C1A3EBFE70036198A /* AddEntryViewController.swift */,
 				EC7A7E6C1A3EBA3A0036198A /* DetailViewController.swift */,
 				EC7A7E6E1A3EBA3A0036198A /* Main.storyboard */,
+				ECEC749C1A4004B1003FEECC /* ChooseKeyViewController.swift */,
+				ECEC749A1A3ECE5A003FEECC /* UnlockViewController.swift */,
 				EC7A7E711A3EBA3A0036198A /* Images.xcassets */,
 				EC7A7E731A3EBA3A0036198A /* LaunchScreen.xib */,
 				EC7A7E671A3EBA3A0036198A /* Lifeboat.xcdatamodeld */,
@@ -225,8 +231,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC7A7E8B1A3EBAB90036198A /* Entry.swift in Sources */,
+				ECEC749D1A4004B1003FEECC /* ChooseKeyViewController.swift in Sources */,
 				EC7A7E661A3EBA3A0036198A /* AppDelegate.swift in Sources */,
 				EC7A7E691A3EBA3A0036198A /* Lifeboat.xcdatamodeld in Sources */,
+				ECEC749B1A3ECE5A003FEECC /* UnlockViewController.swift in Sources */,
 				EC7A7E8D1A3EBFE70036198A /* AddEntryViewController.swift in Sources */,
 				EC7A7E6B1A3EBA3A0036198A /* MasterViewController.swift in Sources */,
 				EC7A7E6D1A3EBA3A0036198A /* DetailViewController.swift in Sources */,
@@ -421,6 +429,7 @@
 				EC7A7E861A3EBA3A0036198A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EC7A7E871A3EBA3A0036198A /* Build configuration list for PBXNativeTarget "LifeboatTests" */ = {
 			isa = XCConfigurationList;
@@ -429,6 +438,7 @@
 				EC7A7E891A3EBA3A0036198A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
