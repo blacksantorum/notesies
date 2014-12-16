@@ -8,10 +8,13 @@
 
 import UIKit
 import CoreData
+import MoPub
 
-class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate, MPInterstitialAdControllerDelegate {
     
-
+    // TODO: Replace this test id with your personal ad unit id
+    var interstitial: MPInterstitialAdController = MPInterstitialAdController(forAdUnitId: "77ce0b65cf81438eb255695afe3b1904")
+    
     var managedObjectContext: NSManagedObjectContext? = nil
 
     @IBAction func unwindAfterCancelling(segue: UIStoryboardSegue) {
@@ -26,6 +29,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     @IBAction func unwindAfterAdding(segue: UIStoryboardSegue) {
         // self.needsUnlock = false
+        self.interstitial.loadAd()
     }
     
     @IBAction func unwindAfterChooseKey(segue: UIStoryboardSegue) {
@@ -53,14 +57,14 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-
+        self.interstitial.delegate = self
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // Present the ad only after it has loaded and is ready
+    func interstitialDidLoadAd(interstitial: MPInterstitialAdController) {
+        if (interstitial.ready) {
+            interstitial.showFromViewController(self)
+        }
     }
 
     // MARK: - Segues

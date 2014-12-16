@@ -1,0 +1,500 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC7A7E661A3EBA3A0036198A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A7E651A3EBA3A0036198A /* AppDelegate.swift */; };
+		EC7A7E691A3EBA3A0036198A /* Lifeboat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC7A7E671A3EBA3A0036198A /* Lifeboat.xcdatamodeld */; };
+		EC7A7E6B1A3EBA3A0036198A /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A7E6A1A3EBA3A0036198A /* MasterViewController.swift */; };
+		EC7A7E6D1A3EBA3A0036198A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A7E6C1A3EBA3A0036198A /* DetailViewController.swift */; };
+		EC7A7E701A3EBA3A0036198A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC7A7E6E1A3EBA3A0036198A /* Main.storyboard */; };
+		EC7A7E721A3EBA3A0036198A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC7A7E711A3EBA3A0036198A /* Images.xcassets */; };
+		EC7A7E751A3EBA3A0036198A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7A7E731A3EBA3A0036198A /* LaunchScreen.xib */; };
+		EC7A7E811A3EBA3A0036198A /* LifeboatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A7E801A3EBA3A0036198A /* LifeboatTests.swift */; };
+		EC7A7E8B1A3EBAB90036198A /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A7E8A1A3EBAB90036198A /* Entry.swift */; };
+		EC7A7E8D1A3EBFE70036198A /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A7E8C1A3EBFE70036198A /* AddEntryViewController.swift */; };
+		ECCED2551A4011C7003ADA5A /* MoPub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECCED2521A4011C7003ADA5A /* MoPub.framework */; };
+		ECCED2561A4011C7003ADA5A /* MoPub.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ECCED2531A4011C7003ADA5A /* MoPub.bundle */; };
+		ECCED2571A4011C7003ADA5A /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECCED2541A4011C7003ADA5A /* Fabric.framework */; };
+		ECCED2591A401245003ADA5A /* AdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCED2581A401245003ADA5A /* AdViewController.swift */; };
+		ECEC749B1A3ECE5A003FEECC /* UnlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEC749A1A3ECE5A003FEECC /* UnlockViewController.swift */; };
+		ECEC749D1A4004B1003FEECC /* ChooseKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEC749C1A4004B1003FEECC /* ChooseKeyViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC7A7E7B1A3EBA3A0036198A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC7A7E581A3EBA3A0036198A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC7A7E5F1A3EBA3A0036198A;
+			remoteInfo = Lifeboat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EC7A7E601A3EBA3A0036198A /* Notesies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notesies.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC7A7E641A3EBA3A0036198A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC7A7E651A3EBA3A0036198A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EC7A7E681A3EBA3A0036198A /* Lifeboat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lifeboat.xcdatamodel; sourceTree = "<group>"; };
+		EC7A7E6A1A3EBA3A0036198A /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		EC7A7E6C1A3EBA3A0036198A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		EC7A7E6F1A3EBA3A0036198A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EC7A7E711A3EBA3A0036198A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EC7A7E741A3EBA3A0036198A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		EC7A7E7A1A3EBA3A0036198A /* NotesiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotesiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC7A7E7F1A3EBA3A0036198A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC7A7E801A3EBA3A0036198A /* LifeboatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeboatTests.swift; sourceTree = "<group>"; };
+		EC7A7E8A1A3EBAB90036198A /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		EC7A7E8C1A3EBFE70036198A /* AddEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
+		ECCED2521A4011C7003ADA5A /* MoPub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MoPub.framework; sourceTree = SOURCE_ROOT; };
+		ECCED2531A4011C7003ADA5A /* MoPub.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MoPub.bundle; path = MoPub.framework/Versions/A/Resources/MoPub.bundle; sourceTree = SOURCE_ROOT; };
+		ECCED2541A4011C7003ADA5A /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		ECCED2581A401245003ADA5A /* AdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdViewController.swift; sourceTree = "<group>"; };
+		ECEC749A1A3ECE5A003FEECC /* UnlockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlockViewController.swift; sourceTree = "<group>"; };
+		ECEC749C1A4004B1003FEECC /* ChooseKeyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseKeyViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC7A7E5D1A3EBA3A0036198A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECCED2551A4011C7003ADA5A /* MoPub.framework in Frameworks */,
+				ECCED2571A4011C7003ADA5A /* Fabric.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC7A7E771A3EBA3A0036198A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC7A7E571A3EBA3A0036198A = {
+			isa = PBXGroup;
+			children = (
+				EC7A7E621A3EBA3A0036198A /* Lifeboat */,
+				EC7A7E7D1A3EBA3A0036198A /* LifeboatTests */,
+				EC7A7E611A3EBA3A0036198A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC7A7E611A3EBA3A0036198A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC7A7E601A3EBA3A0036198A /* Notesies.app */,
+				EC7A7E7A1A3EBA3A0036198A /* NotesiesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC7A7E621A3EBA3A0036198A /* Lifeboat */ = {
+			isa = PBXGroup;
+			children = (
+				ECCED2521A4011C7003ADA5A /* MoPub.framework */,
+				ECCED2531A4011C7003ADA5A /* MoPub.bundle */,
+				ECCED2541A4011C7003ADA5A /* Fabric.framework */,
+				EC7A7E651A3EBA3A0036198A /* AppDelegate.swift */,
+				ECCED2581A401245003ADA5A /* AdViewController.swift */,
+				EC7A7E6A1A3EBA3A0036198A /* MasterViewController.swift */,
+				EC7A7E8C1A3EBFE70036198A /* AddEntryViewController.swift */,
+				EC7A7E6C1A3EBA3A0036198A /* DetailViewController.swift */,
+				EC7A7E6E1A3EBA3A0036198A /* Main.storyboard */,
+				ECEC749C1A4004B1003FEECC /* ChooseKeyViewController.swift */,
+				ECEC749A1A3ECE5A003FEECC /* UnlockViewController.swift */,
+				EC7A7E711A3EBA3A0036198A /* Images.xcassets */,
+				EC7A7E731A3EBA3A0036198A /* LaunchScreen.xib */,
+				EC7A7E671A3EBA3A0036198A /* Lifeboat.xcdatamodeld */,
+				EC7A7E8A1A3EBAB90036198A /* Entry.swift */,
+				EC7A7E631A3EBA3A0036198A /* Supporting Files */,
+			);
+			path = Lifeboat;
+			sourceTree = "<group>";
+		};
+		EC7A7E631A3EBA3A0036198A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC7A7E641A3EBA3A0036198A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC7A7E7D1A3EBA3A0036198A /* LifeboatTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC7A7E801A3EBA3A0036198A /* LifeboatTests.swift */,
+				EC7A7E7E1A3EBA3A0036198A /* Supporting Files */,
+			);
+			path = LifeboatTests;
+			sourceTree = "<group>";
+		};
+		EC7A7E7E1A3EBA3A0036198A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC7A7E7F1A3EBA3A0036198A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC7A7E5F1A3EBA3A0036198A /* Notesies */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC7A7E841A3EBA3A0036198A /* Build configuration list for PBXNativeTarget "Notesies" */;
+			buildPhases = (
+				EC7A7E5C1A3EBA3A0036198A /* Sources */,
+				EC7A7E5D1A3EBA3A0036198A /* Frameworks */,
+				EC7A7E5E1A3EBA3A0036198A /* Resources */,
+				ECCED2511A401196003ADA5A /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Notesies;
+			productName = Lifeboat;
+			productReference = EC7A7E601A3EBA3A0036198A /* Notesies.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EC7A7E791A3EBA3A0036198A /* NotesiesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC7A7E871A3EBA3A0036198A /* Build configuration list for PBXNativeTarget "NotesiesTests" */;
+			buildPhases = (
+				EC7A7E761A3EBA3A0036198A /* Sources */,
+				EC7A7E771A3EBA3A0036198A /* Frameworks */,
+				EC7A7E781A3EBA3A0036198A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC7A7E7C1A3EBA3A0036198A /* PBXTargetDependency */,
+			);
+			name = NotesiesTests;
+			productName = LifeboatTests;
+			productReference = EC7A7E7A1A3EBA3A0036198A /* NotesiesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC7A7E581A3EBA3A0036198A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = blacksantorum;
+				TargetAttributes = {
+					EC7A7E5F1A3EBA3A0036198A = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					EC7A7E791A3EBA3A0036198A = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = EC7A7E5F1A3EBA3A0036198A;
+					};
+				};
+			};
+			buildConfigurationList = EC7A7E5B1A3EBA3A0036198A /* Build configuration list for PBXProject "Notesies" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC7A7E571A3EBA3A0036198A;
+			productRefGroup = EC7A7E611A3EBA3A0036198A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC7A7E5F1A3EBA3A0036198A /* Notesies */,
+				EC7A7E791A3EBA3A0036198A /* NotesiesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC7A7E5E1A3EBA3A0036198A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7A7E701A3EBA3A0036198A /* Main.storyboard in Resources */,
+				EC7A7E751A3EBA3A0036198A /* LaunchScreen.xib in Resources */,
+				EC7A7E721A3EBA3A0036198A /* Images.xcassets in Resources */,
+				ECCED2561A4011C7003ADA5A /* MoPub.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC7A7E781A3EBA3A0036198A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		ECCED2511A401196003ADA5A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 10c40858a2f71a28d7aaa3fb1a48cc74997d6c6e 5021aec3fa95c38a231f81174a0344d0178a2f0436ce7cc9cf148dfda7c5cb87";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC7A7E5C1A3EBA3A0036198A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7A7E8B1A3EBAB90036198A /* Entry.swift in Sources */,
+				ECEC749D1A4004B1003FEECC /* ChooseKeyViewController.swift in Sources */,
+				EC7A7E661A3EBA3A0036198A /* AppDelegate.swift in Sources */,
+				EC7A7E691A3EBA3A0036198A /* Lifeboat.xcdatamodeld in Sources */,
+				ECEC749B1A3ECE5A003FEECC /* UnlockViewController.swift in Sources */,
+				EC7A7E8D1A3EBFE70036198A /* AddEntryViewController.swift in Sources */,
+				ECCED2591A401245003ADA5A /* AdViewController.swift in Sources */,
+				EC7A7E6B1A3EBA3A0036198A /* MasterViewController.swift in Sources */,
+				EC7A7E6D1A3EBA3A0036198A /* DetailViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC7A7E761A3EBA3A0036198A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7A7E811A3EBA3A0036198A /* LifeboatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC7A7E7C1A3EBA3A0036198A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC7A7E5F1A3EBA3A0036198A /* Notesies */;
+			targetProxy = EC7A7E7B1A3EBA3A0036198A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EC7A7E6E1A3EBA3A0036198A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC7A7E6F1A3EBA3A0036198A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EC7A7E731A3EBA3A0036198A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC7A7E741A3EBA3A0036198A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC7A7E821A3EBA3A0036198A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EC7A7E831A3EBA3A0036198A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC7A7E851A3EBA3A0036198A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Lifeboat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = Notesies;
+			};
+			name = Debug;
+		};
+		EC7A7E861A3EBA3A0036198A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Lifeboat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = Notesies;
+			};
+			name = Release;
+		};
+		EC7A7E881A3EBA3A0036198A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LifeboatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = NotesiesTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lifeboat.app/Lifeboat";
+			};
+			name = Debug;
+		};
+		EC7A7E891A3EBA3A0036198A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LifeboatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = NotesiesTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lifeboat.app/Lifeboat";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC7A7E5B1A3EBA3A0036198A /* Build configuration list for PBXProject "Notesies" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC7A7E821A3EBA3A0036198A /* Debug */,
+				EC7A7E831A3EBA3A0036198A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC7A7E841A3EBA3A0036198A /* Build configuration list for PBXNativeTarget "Notesies" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC7A7E851A3EBA3A0036198A /* Debug */,
+				EC7A7E861A3EBA3A0036198A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC7A7E871A3EBA3A0036198A /* Build configuration list for PBXNativeTarget "NotesiesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC7A7E881A3EBA3A0036198A /* Debug */,
+				EC7A7E891A3EBA3A0036198A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EC7A7E671A3EBA3A0036198A /* Lifeboat.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EC7A7E681A3EBA3A0036198A /* Lifeboat.xcdatamodel */,
+			);
+			currentVersion = EC7A7E681A3EBA3A0036198A /* Lifeboat.xcdatamodel */;
+			path = Lifeboat.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EC7A7E581A3EBA3A0036198A /* Project object */;
+}
