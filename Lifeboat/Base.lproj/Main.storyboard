@@ -23,7 +23,7 @@
         <!--Unlock View Controller-->
         <scene sceneID="NzP-Ed-8Cv">
             <objects>
-                <viewController id="00D-Ho-Vpf" customClass="UnlockViewController" customModule="Lifeboat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="00D-Ho-Vpf" customClass="UnlockViewController" customModule="Notesies" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QiG-tU-kTW"/>
                         <viewControllerLayoutGuide type="bottom" id="rqA-93-cTT"/>
@@ -61,7 +61,7 @@
         <!--Choose Key View Controller-->
         <scene sceneID="Bek-No-8Wm">
             <objects>
-                <viewController id="Iog-ps-bR8" customClass="ChooseKeyViewController" customModule="Lifeboat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Iog-ps-bR8" customClass="ChooseKeyViewController" customModule="Notesies" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Rrh-SL-JVf"/>
                         <viewControllerLayoutGuide type="bottom" id="Yk3-QE-gNB"/>
@@ -70,13 +70,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Snote." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJS-fb-5qT">
-                                <rect key="frame" x="200" y="74" width="201" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Notesies." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJS-fb-5qT">
+                                <rect key="frame" x="185" y="74" width="231" height="28"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your key below. You will be prompted for your key every time you open Snote." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1K-4R-8sf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your key below. You will be prompted for your key every time you open Notesies." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1K-4R-8sf">
                                 <rect key="frame" x="14" y="110" width="573" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -127,7 +127,7 @@
         <!--Add Entry View Controller-->
         <scene sceneID="Gc3-6T-FId">
             <objects>
-                <viewController id="0ef-Ye-XfL" customClass="AddEntryViewController" customModule="Lifeboat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0ef-Ye-XfL" customClass="AddEntryViewController" customModule="Notesies" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5yU-cy-1mc"/>
                         <viewControllerLayoutGuide type="bottom" id="TZy-nS-4zB"/>
@@ -197,7 +197,7 @@
         <!--Ad View Controller-->
         <scene sceneID="7Qr-PG-qBj">
             <objects>
-                <viewController storyboardIdentifier="showAd" id="JbX-Uk-bHM" customClass="AdViewController" customModule="Lifeboat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="showAd" id="JbX-Uk-bHM" customClass="AdViewController" customModule="Notesies" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2hH-0O-7gv"/>
                         <viewControllerLayoutGuide type="bottom" id="Exy-GU-ikl"/>
@@ -215,7 +215,7 @@
         <!--Master-->
         <scene sceneID="VgW-fR-Quf">
             <objects>
-                <tableViewController title="Master" id="pGg-6v-bdr" customClass="MasterViewController" customModule="Lifeboat" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Master" id="pGg-6v-bdr" customClass="MasterViewController" customModule="Notesies" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mLL-gJ-YKr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -280,7 +280,7 @@
         <!--Detail-->
         <scene sceneID="Cn3-H9-jdl">
             <objects>
-                <viewController title="Detail" id="Ah7-4n-0Wa" customClass="DetailViewController" customModule="Lifeboat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Detail" id="Ah7-4n-0Wa" customClass="DetailViewController" customModule="Notesies" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cIm-e0-J51"/>
                         <viewControllerLayoutGuide type="bottom" id="a0L-h9-sNL"/>

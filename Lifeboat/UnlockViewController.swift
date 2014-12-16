@@ -10,8 +10,6 @@ import UIKit
 
 class UnlockViewController: UIViewController , UITextFieldDelegate {
     
-    let password = "nodagpie"
-    
     @IBOutlet weak var unlockTextField: UITextField!
 
     override func viewDidLoad() {
@@ -29,7 +27,9 @@ class UnlockViewController: UIViewController , UITextFieldDelegate {
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         let newString = textField.text + string
         
-        if (newString == password) {
+        let delegate = UIApplication.sharedApplication().delegate as AppDelegate
+        
+        if (newString == delegate.key!) {
             self.performSegueWithIdentifier("unlock", sender: self)
         }
         

@@ -45,6 +45,7 @@ class ChooseKeyViewController: UIViewController, UITextFieldDelegate {
             let delegate = UIApplication.sharedApplication().delegate as AppDelegate
             
             if textField.text == key {
+                // NSUserDefaults.standardUserDefaults().setNilValueForKey(delegate.keyKey)
                 NSUserDefaults.standardUserDefaults().setObject(key!, forKey: delegate.keyKey)
                 NSUserDefaults.standardUserDefaults().synchronize()
                 delegate.key = key!

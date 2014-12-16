@@ -14,7 +14,6 @@
 		EC7A7E701A3EBA3A0036198A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC7A7E6E1A3EBA3A0036198A /* Main.storyboard */; };
 		EC7A7E721A3EBA3A0036198A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC7A7E711A3EBA3A0036198A /* Images.xcassets */; };
 		EC7A7E751A3EBA3A0036198A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7A7E731A3EBA3A0036198A /* LaunchScreen.xib */; };
-		EC7A7E811A3EBA3A0036198A /* LifeboatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A7E801A3EBA3A0036198A /* LifeboatTests.swift */; };
 		EC7A7E8B1A3EBAB90036198A /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A7E8A1A3EBAB90036198A /* Entry.swift */; };
 		EC7A7E8D1A3EBFE70036198A /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7A7E8C1A3EBFE70036198A /* AddEntryViewController.swift */; };
 		ECCED2551A4011C7003ADA5A /* MoPub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECCED2521A4011C7003ADA5A /* MoPub.framework */; };
@@ -24,16 +23,6 @@
 		ECEC749B1A3ECE5A003FEECC /* UnlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEC749A1A3ECE5A003FEECC /* UnlockViewController.swift */; };
 		ECEC749D1A4004B1003FEECC /* ChooseKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEC749C1A4004B1003FEECC /* ChooseKeyViewController.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		EC7A7E7B1A3EBA3A0036198A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC7A7E581A3EBA3A0036198A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EC7A7E5F1A3EBA3A0036198A;
-			remoteInfo = Lifeboat;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		EC7A7E601A3EBA3A0036198A /* Notesies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notesies.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,7 +34,6 @@
 		EC7A7E6F1A3EBA3A0036198A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC7A7E711A3EBA3A0036198A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EC7A7E741A3EBA3A0036198A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		EC7A7E7A1A3EBA3A0036198A /* NotesiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotesiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC7A7E7F1A3EBA3A0036198A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC7A7E801A3EBA3A0036198A /* LifeboatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeboatTests.swift; sourceTree = "<group>"; };
 		EC7A7E8A1A3EBAB90036198A /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
@@ -68,13 +56,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EC7A7E771A3EBA3A0036198A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -91,7 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				EC7A7E601A3EBA3A0036198A /* Notesies.app */,
-				EC7A7E7A1A3EBA3A0036198A /* NotesiesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,24 +145,6 @@
 			productReference = EC7A7E601A3EBA3A0036198A /* Notesies.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EC7A7E791A3EBA3A0036198A /* NotesiesTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EC7A7E871A3EBA3A0036198A /* Build configuration list for PBXNativeTarget "NotesiesTests" */;
-			buildPhases = (
-				EC7A7E761A3EBA3A0036198A /* Sources */,
-				EC7A7E771A3EBA3A0036198A /* Frameworks */,
-				EC7A7E781A3EBA3A0036198A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EC7A7E7C1A3EBA3A0036198A /* PBXTargetDependency */,
-			);
-			name = NotesiesTests;
-			productName = LifeboatTests;
-			productReference = EC7A7E7A1A3EBA3A0036198A /* NotesiesTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -194,10 +156,6 @@
 				TargetAttributes = {
 					EC7A7E5F1A3EBA3A0036198A = {
 						CreatedOnToolsVersion = 6.1;
-					};
-					EC7A7E791A3EBA3A0036198A = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = EC7A7E5F1A3EBA3A0036198A;
 					};
 				};
 			};
@@ -215,7 +173,6 @@
 			projectRoot = "";
 			targets = (
 				EC7A7E5F1A3EBA3A0036198A /* Notesies */,
-				EC7A7E791A3EBA3A0036198A /* NotesiesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -229,13 +186,6 @@
 				EC7A7E751A3EBA3A0036198A /* LaunchScreen.xib in Resources */,
 				EC7A7E721A3EBA3A0036198A /* Images.xcassets in Resources */,
 				ECCED2561A4011C7003ADA5A /* MoPub.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EC7A7E781A3EBA3A0036198A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,23 +224,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EC7A7E761A3EBA3A0036198A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EC7A7E811A3EBA3A0036198A /* LifeboatTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		EC7A7E7C1A3EBA3A0036198A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EC7A7E5F1A3EBA3A0036198A /* Notesies */;
-			targetProxy = EC7A7E7B1A3EBA3A0036198A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EC7A7E6E1A3EBA3A0036198A /* Main.storyboard */ = {
@@ -417,40 +351,6 @@
 			};
 			name = Release;
 		};
-		EC7A7E881A3EBA3A0036198A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = LifeboatTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = NotesiesTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lifeboat.app/Lifeboat";
-			};
-			name = Debug;
-		};
-		EC7A7E891A3EBA3A0036198A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = LifeboatTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = NotesiesTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lifeboat.app/Lifeboat";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -468,15 +368,6 @@
 			buildConfigurations = (
 				EC7A7E851A3EBA3A0036198A /* Debug */,
 				EC7A7E861A3EBA3A0036198A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EC7A7E871A3EBA3A0036198A /* Build configuration list for PBXNativeTarget "NotesiesTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EC7A7E881A3EBA3A0036198A /* Debug */,
-				EC7A7E891A3EBA3A0036198A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

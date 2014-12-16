@@ -10,10 +10,15 @@ import UIKit
 import CoreData
 import MoPub
 
-class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate, MPInterstitialAdControllerDelegate {
+class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate, MPInterstitialAdControllerDelegate, MPAdViewDelegate
+ {
     
     // TODO: Replace this test id with your personal ad unit id
-    var interstitial: MPInterstitialAdController = MPInterstitialAdController(forAdUnitId: "77ce0b65cf81438eb255695afe3b1904")
+    var interstitial: MPInterstitialAdController = MPInterstitialAdController(forAdUnitId: "66dd6a39d91c49af8d5b2a91bc0010f4")
+    
+    // TODO: Replace this test id with your personal ad unit id
+    var adView: MPAdView = MPAdView(adUnitId: "66dd6a39d91c49af8d5b2a91bc0010f4", size: MOPUB_BANNER_SIZE)
+
     
     var managedObjectContext: NSManagedObjectContext? = nil
 
@@ -58,6 +63,21 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         self.interstitial.delegate = self
+        
+        self.adView.delegate = self
+        self.adView.frame = CGRectMake(0, self.view.bounds.size.height - MOPUB_BANNER_SIZE.height,
+            MOPUB_BANNER_SIZE.width, MOPUB_BANNER_SIZE.height)
+        self.view.addSubview(self.adView)
+        
+        // self.tableView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height - MOPUB_BANNER_SIZE.height)
+        
+        self.adView.loadAd()
+        
+        
+    }
+    
+    func viewControllerForPresentingModalView() -> UIViewController {
+        return self
     }
 
     // Present the ad only after it has loaded and is ready
