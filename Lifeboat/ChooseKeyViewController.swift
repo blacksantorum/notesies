@@ -45,9 +45,8 @@ class ChooseKeyViewController: UIViewController, UITextFieldDelegate {
             let delegate = UIApplication.sharedApplication().delegate as AppDelegate
             
             if textField.text == key {
-                // NSUserDefaults.standardUserDefaults().setNilValueForKey(delegate.keyKey)
-                NSUserDefaults.standardUserDefaults().setObject(key!, forKey: delegate.keyKey)
-                NSUserDefaults.standardUserDefaults().synchronize()
+                var keychain = KeychainItemWrapper(identifier: delegate.keyKey, accessGroup: nil)
+                keychain.setObject(key!, forKey: kSecAttrAccount)
                 delegate.key = key!
                 self.performSegueWithIdentifier("keyChosen", sender: self)
             } else {

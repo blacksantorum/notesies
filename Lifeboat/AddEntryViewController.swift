@@ -16,6 +16,14 @@ class AddEntryViewController: UIViewController, UITextFieldDelegate, UITextViewD
     
     @IBOutlet weak var addEntryButton: UIBarButtonItem!
     
+    @IBOutlet weak var fakeTextField: UITextField!
+    
+    
+    @IBAction func fakeTextFieldTapped(sender: AnyObject) {
+        fakeTextField.hidden = true
+        contentTextView.hidden = false
+        contentTextView.becomeFirstResponder()
+    }
     
     @IBAction func addEntry(sender: AnyObject) {
         self.insertNewObject(self.addEntryButton)
@@ -27,20 +35,22 @@ class AddEntryViewController: UIViewController, UITextFieldDelegate, UITextViewD
         super.viewDidLoad()
         self.titleTextField.delegate = self
         self.contentTextView.delegate = self
+        self.contentTextView.contentInset = UIEdgeInsetsMake(0, -5, 0, 0)
         // Do any additional setup after loading the view.
     }
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        
+    @IBAction func titleTextFieldEditingDidChange(sender: AnyObject) {
         self.addEntryButton.enabled = !self.titleTextField.text.isEmpty && !self.contentTextView.text.isEmpty
-        
-        return true
     }
     
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+    func textViewDidChange(textView: UITextView) {
         self.addEntryButton.enabled = !self.titleTextField.text.isEmpty && !self.contentTextView.text.isEmpty
         
-        return true
+        if self.contentTextView.text.isEmpty {
+            contentTextView.hidden = true
+            fakeTextField.hidden = false
+            fakeTextField.resignFirstResponder()
+        }
     }
 
     override func didReceiveMemoryWarning() {

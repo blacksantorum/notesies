@@ -41,15 +41,19 @@ class DetailViewController: UIViewController {
         
         let delegate = UIApplication.sharedApplication().delegate as AppDelegate
         
+        /*
         if delegate.needsAuth {
             self.performSegueWithIdentifier("prompt", sender: self)
         }
+        */
+        
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
+        self.entryContentTextView.contentInset = UIEdgeInsetsMake(0, -5, 0, 0)
     }
 
     override func didReceiveMemoryWarning() {

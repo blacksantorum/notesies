@@ -14,16 +14,14 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
  {
     
     // TODO: Replace this test id with your personal ad unit id
-    var interstitial: MPInterstitialAdController = MPInterstitialAdController(forAdUnitId: "66dd6a39d91c49af8d5b2a91bc0010f4")
-    
-    // TODO: Replace this test id with your personal ad unit id
-    var adView: MPAdView = MPAdView(adUnitId: "66dd6a39d91c49af8d5b2a91bc0010f4", size: MOPUB_BANNER_SIZE)
-
+    var interstitial: MPInterstitialAdController = MPInterstitialAdController(forAdUnitId:
+        "66dd6a39d91c49af8d5b2a91bc0010f4")
     
     var managedObjectContext: NSManagedObjectContext? = nil
 
     @IBAction func unwindAfterCancelling(segue: UIStoryboardSegue) {
-        // self.needsUnlock = false
+        let delegate = UIApplication.sharedApplication().delegate as AppDelegate
+        delegate.needsAuth = false
     }
     
     @IBAction func unlock(segue: UIStoryboardSegue) {
@@ -33,7 +31,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
     
     @IBAction func unwindAfterAdding(segue: UIStoryboardSegue) {
-        // self.needsUnlock = false
+        let delegate = UIApplication.sharedApplication().delegate as AppDelegate
+        delegate.needsAuth = false
         self.interstitial.loadAd()
     }
     
@@ -50,30 +49,25 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        println("master did appear")
+        
         let delegate = UIApplication.sharedApplication().delegate as AppDelegate
         
-        if delegate.key == nil {
+        if (delegate.key == nil || delegate.key!.isEmpty) {
+            // self.tableView.hidden = true
             self.performSegueWithIdentifier("chooseKey", sender: self)
+            // self.tableView.hidden = false
         }
         else if delegate.needsAuth {
+            // self.tableView.hidden = true
             self.performSegueWithIdentifier("prompt", sender: self)
+            // self.tableView.hidden = false
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.interstitial.delegate = self
-        
-        self.adView.delegate = self
-        self.adView.frame = CGRectMake(0, self.view.bounds.size.height - MOPUB_BANNER_SIZE.height,
-            MOPUB_BANNER_SIZE.width, MOPUB_BANNER_SIZE.height)
-        self.view.addSubview(self.adView)
-        
-        // self.tableView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height - MOPUB_BANNER_SIZE.height)
-        
-        self.adView.loadAd()
-        
-        
     }
     
     func viewControllerForPresentingModalView() -> UIViewController {
@@ -90,6 +84,10 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let delegate = UIApplication.sharedApplication().delegate as AppDelegate
+        delegate.needsAuth = false
+        
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
             let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
@@ -146,7 +144,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
         let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
-        cell.textLabel.text = object.valueForKey("title")!.description
+        cell.textLabel!.text = object.valueForKey("title")!.description
         var formatter = NSDateFormatter()
         formatter.dateFormat = "M/d"
         cell.detailTextLabel!.text = formatter.stringFromDate(object.valueForKey("timeStamp")! as NSDate)
