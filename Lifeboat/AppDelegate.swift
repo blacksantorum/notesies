@@ -27,6 +27,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Fabric.with([MoPub()])
         
+        launched = NSUserDefaults.standardUserDefaults().boolForKey("LAUNCHED")
+        
+        if !launched {
+            var keychain = KeychainItemWrapper(identifier: keyKey, accessGroup: nil)
+            keychain.setObject("", forKey: kSecAttrAccount)
+        }
+        
         needsAuth = true
         
         var keychain = KeychainItemWrapper(identifier: keyKey, accessGroup: nil)
@@ -69,19 +76,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        launched = NSUserDefaults.standardUserDefaults().boolForKey("LAUNCHED")
+        
+        if launched {
+            if let nav = self.window!.rootViewController as? UINavigationController {
+                if let master = nav.topViewController as? MasterViewController {
+                    master.hidden = true
+                    master.tableView.reloadData()
+                    master.performSegueWithIdentifier("prompt", sender: self)
+                }
+            }
+        }
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         launched = NSUserDefaults.standardUserDefaults().boolForKey("LAUNCHED")
         
-        if launched {
-            if let nav = self.window!.rootViewController as? UINavigationController {
-                if let master = nav.topViewController as? MasterViewController {
-                    master.performSegueWithIdentifier("prompt", sender: self)
-                }
-            }
-        } else {
+        println("Launched: \(launched)")
+        
+        if !launched {
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "LAUNCHED")
         }
     }

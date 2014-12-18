@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -32,13 +32,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="7cl-pK-l57">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your key" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="7cl-pK-l57">
                                 <rect key="frame" x="16" y="177" width="568" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="i27-Lm-2JM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="keyTextFieldEditingChanged:" destination="00D-Ho-Vpf" eventType="editingChanged" id="1yd-Vl-Dze"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -158,7 +161,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Bok-1Q-Bv6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <connections>
                                     <action selector="titleTextFieldEditingDidChange:" destination="0ef-Ye-XfL" eventType="editingChanged" id="OnX-mM-9Ab"/>
@@ -276,7 +279,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Entries" id="tQt-TN-PWz">
-                        <barButtonItem key="leftBarButtonItem" title="Change key" id="V1u-13-hwr">
+                        <barButtonItem key="leftBarButtonItem" image="key" id="V1u-13-hwr">
                             <connections>
                                 <segue destination="Iog-ps-bR8" kind="presentation" identifier="resetKey" id="ese-R3-Qev"/>
                             </connections>
@@ -334,6 +337,9 @@
             <point key="canvasLocation" x="1343" y="64"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="key" width="25" height="25"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ese-R3-Qev"/>
     </inferredMetricsTieBreakers>

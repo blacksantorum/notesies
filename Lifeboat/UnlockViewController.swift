@@ -24,16 +24,13 @@ class UnlockViewController: UIViewController , UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        let newString = textField.text + string
-        
+    
+    @IBAction func keyTextFieldEditingChanged(sender: AnyObject) {
         let delegate = UIApplication.sharedApplication().delegate as AppDelegate
         
-        if (newString == delegate.key!) {
+        if (unlockTextField.text == delegate.key!) {
             self.performSegueWithIdentifier("unlock", sender: self)
         }
-        
-        return true
     }
 
     /*

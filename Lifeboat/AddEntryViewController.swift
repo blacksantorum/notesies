@@ -45,7 +45,7 @@ class AddEntryViewController: UIViewController, UITextFieldDelegate, UITextViewD
         contentTextView.hidden = false
         fakeTextField.hidden = true
         contentTextView.becomeFirstResponder()
-        return true
+        return false
     }
     
     @IBAction func titleTextFieldEditingDidChange(sender: AnyObject) {
@@ -54,12 +54,13 @@ class AddEntryViewController: UIViewController, UITextFieldDelegate, UITextViewD
     
     func textViewDidChange(textView: UITextView) {
         self.addEntryButton.enabled = !self.titleTextField.text.isEmpty && !self.contentTextView.text.isEmpty
-        
+        /*
         if self.contentTextView.text.isEmpty {
             contentTextView.hidden = true
             fakeTextField.hidden = false
             fakeTextField.resignFirstResponder()
         }
+        */
     }
 
     override func didReceiveMemoryWarning() {

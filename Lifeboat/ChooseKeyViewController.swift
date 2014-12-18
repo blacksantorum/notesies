@@ -27,6 +27,7 @@ class ChooseKeyViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.chooseKeyTextField.delegate = self
         if isResetting {
+            self.chooseKeyTextField.placeholder = "Choose a new key"
             introLabelA.hidden = true
             introLabelB.hidden = true
         } else {

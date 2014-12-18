@@ -17,22 +17,31 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     var interstitial: MPInterstitialAdController = MPInterstitialAdController(forAdUnitId:
         "66dd6a39d91c49af8d5b2a91bc0010f4")
     
+    var hidden = true
+    
     var managedObjectContext: NSManagedObjectContext? = nil
 
     @IBAction func unwindAfterCancelling(segue: UIStoryboardSegue) {
         let delegate = UIApplication.sharedApplication().delegate as AppDelegate
         delegate.needsAuth = false
+        hidden = false
+        self.tableView.reloadData()
     }
     
     @IBAction func unlock(segue: UIStoryboardSegue) {
         // self.needsUnlock = false
         let delegate = UIApplication.sharedApplication().delegate as AppDelegate
         delegate.needsAuth = false
+        
+        hidden = false
+        self.tableView.reloadData()
     }
     
     @IBAction func unwindAfterAdding(segue: UIStoryboardSegue) {
         let delegate = UIApplication.sharedApplication().delegate as AppDelegate
         delegate.needsAuth = false
+        hidden = false
+        self.tableView.reloadData()
         self.interstitial.loadAd()
     }
     
@@ -40,10 +49,19 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         // self.needsUnlock = false
         let delegate = UIApplication.sharedApplication().delegate as AppDelegate
         delegate.needsAuth = false
+        
+        hidden = false
+        self.tableView.reloadData()
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        // hidden = true
+        // tableView.reloadData()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -153,6 +171,15 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         var formatter = NSDateFormatter()
         formatter.dateFormat = "M/d"
         cell.detailTextLabel!.text = formatter.stringFromDate(object.valueForKey("timeStamp")! as NSDate)
+        
+        if hidden {
+            cell.textLabel?.hidden = true
+            cell.detailTextLabel?.hidden = true
+        } else {
+            cell.textLabel?.hidden = false
+            cell.detailTextLabel?.hidden = false
+        }
+        
     }
 
     // MARK: - Fetched results controller
