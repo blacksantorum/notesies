@@ -157,10 +157,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
                 
             var error: NSError? = nil
             if !context.save(&error) {
-                // Replace this implementation with code to handle the error appropriately.
-                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                //println("Unresolved error \(error), \(error.userInfo)")
-                abort()
+                self.handleError(error!)
             }
         }
     }
@@ -180,6 +177,22 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             cell.detailTextLabel?.hidden = false
         }
         
+    }
+    
+    func handleError(error: NSError)
+    {
+        if let gotModernAlert: AnyClass = NSClassFromString("UIAlertController") {
+            var alert = UIAlertController(
+                title: "Error",
+                message: error.localizedDescription,
+                preferredStyle: UIAlertControllerStyle.Alert
+            )
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        else {
+            UIAlertView(title: "Error", message: error.localizedDescription, delegate: self, cancelButtonTitle: "Dismiss").show()
+        }
     }
 
     // MARK: - Fetched results controller
@@ -211,10 +224,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         
     	var error: NSError? = nil
     	if !_fetchedResultsController!.performFetch(&error) {
-    	     // Replace this implementation with code to handle the error appropriately.
-    	     // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-             //println("Unresolved error \(error), \(error.userInfo)")
-    	     abort()
+    	     self.handleError(error!)
     	}
         
         return _fetchedResultsController!
