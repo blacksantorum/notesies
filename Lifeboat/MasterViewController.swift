@@ -49,16 +49,21 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        println("master did appear")
+        // println("master did appear")
         
         let delegate = UIApplication.sharedApplication().delegate as AppDelegate
         
+        // println("Key in App delegate: \(delegate.key)")
+        // println("Key length in App Delegate: \(delegate.key?.isEmpty)")
+        
         if (delegate.key == nil || delegate.key!.isEmpty) {
+            println("choose key")
             // self.tableView.hidden = true
             self.performSegueWithIdentifier("chooseKey", sender: self)
             // self.tableView.hidden = false
         }
         else if delegate.needsAuth {
+            println("prompt")
             // self.tableView.hidden = true
             self.performSegueWithIdentifier("prompt", sender: self)
             // self.tableView.hidden = false

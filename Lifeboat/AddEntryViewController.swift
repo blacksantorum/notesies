@@ -11,6 +11,8 @@ import CoreData
 
 class AddEntryViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
+    @IBOutlet weak var textViewBottomConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var contentTextView: UITextView!
     
@@ -37,6 +39,13 @@ class AddEntryViewController: UIViewController, UITextFieldDelegate, UITextViewD
         self.contentTextView.delegate = self
         self.contentTextView.contentInset = UIEdgeInsetsMake(0, -5, 0, 0)
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        contentTextView.hidden = false
+        fakeTextField.hidden = true
+        contentTextView.becomeFirstResponder()
+        return true
     }
     
     @IBAction func titleTextFieldEditingDidChange(sender: AnyObject) {
@@ -85,7 +94,31 @@ class AddEntryViewController: UIViewController, UITextFieldDelegate, UITextViewD
         self.titleTextField.becomeFirstResponder()
     }
     
-
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        let kbFrame = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue()
+        self.textViewBottomConstraint.constant += kbFrame!.height
+        self.contentTextView.setNeedsUpdateConstraints()
+        self.contentTextView.layoutIfNeeded()
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        let kbFrame = (notification.userInfo![UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue()
+        self.textViewBottomConstraint.constant -= kbFrame!.height
+        self.contentTextView.setNeedsUpdateConstraints()
+        self.contentTextView.layoutIfNeeded()
+    }
+    
+    
     /*
     // MARK: - Navigation
 
