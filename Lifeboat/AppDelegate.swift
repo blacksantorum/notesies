@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var key: String?
     
+    var launched = false
+    
     var needsAuth = true
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -71,10 +73,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        if let nav = self.window!.rootViewController as? UINavigationController {
-            if let master = nav.topViewController as? MasterViewController {
-                master.performSegueWithIdentifier("prompt", sender: self)
+        launched = NSUserDefaults.standardUserDefaults().boolForKey("LAUNCHED")
+        
+        if launched {
+            if let nav = self.window!.rootViewController as? UINavigationController {
+                if let master = nav.topViewController as? MasterViewController {
+                    master.performSegueWithIdentifier("prompt", sender: self)
+                }
             }
+        } else {
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "LAUNCHED")
         }
     }
 

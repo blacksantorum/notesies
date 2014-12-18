@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -159,7 +159,7 @@
                                     <constraint firstAttribute="height" constant="30" id="Bok-1Q-Bv6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <connections>
                                     <action selector="titleTextFieldEditingDidChange:" destination="0ef-Ye-XfL" eventType="editingChanged" id="OnX-mM-9Ab"/>
                                 </connections>
@@ -204,6 +204,7 @@
                         <outlet property="addEntryButton" destination="vuR-JQ-4QM" id="uxY-WY-FDf"/>
                         <outlet property="contentTextView" destination="OXs-v6-hgx" id="07x-Bf-kau"/>
                         <outlet property="fakeTextField" destination="EQT-sc-6A4" id="jNz-Tb-9TO"/>
+                        <outlet property="textViewBottomConstraint" destination="Sd3-Ml-EkU" id="UDN-H6-M4q"/>
                         <outlet property="titleTextField" destination="lMN-IG-FAc" id="TVY-4U-Yfx"/>
                         <segue destination="4ec-BC-BlS" kind="unwind" identifier="added" unwindAction="unwindAfterAdding:" id="fHp-4o-R2Z"/>
                     </connections>
